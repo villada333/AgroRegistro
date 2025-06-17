@@ -20,7 +20,7 @@ Con base en los requerimientos y alcance del proyecto, se decide crear un modelo
 |------------------|-----------|-----------------------------------------------------------------------------|
 | `id`             | PK, int   | Identificador único para cada usuario.                                      |
 | `nombre`         | string    | Nombre del usuario.                                                          |
-| `pass`           | string    | Contraseña para la autenticación (se recomienda almacenar un hash).          |
+| `pass`           | string    | Contraseña para la autenticación (hash).          |
 | `fecha_creacion` | date      | Fecha en que se creó el usuario.                                            |
 | `estado`         | string    | Indica si el usuario está activo, inactivo, etc.                            |
 
@@ -31,7 +31,7 @@ Con base en los requerimientos y alcance del proyecto, se decide crear un modelo
 | Campo            | Tipo      | Descripción                                                                                     |
 |------------------|-----------|-------------------------------------------------------------------------------------------------|
 | `id`             | PK, int   | Identificador único para cada actividad.                                                       |
-| `nombre`         | string    | Nombre descriptivo de la actividad (p. ej., “Mantenimiento General”, “Limpieza de área”).       |
+| `nombre`         | string    | Nombre descriptivo de la actividad (p. ej., “Siembra”, “Fumigacion”).       |
 | `fecha_creacion` | date      | Fecha en que se definió la actividad.                                                          |
 | `estado`         | string    | Indica si la actividad está disponible para ser registrada.                                    |
 
@@ -54,7 +54,7 @@ Con base en los requerimientos y alcance del proyecto, se decide crear un modelo
 |---------------------|-----------|-----------------------------------------------------------------------------------------------------|
 | `id`                | PK, int   | Identificador único del insumo.                                                                     |
 | `unidad_medida_id`  | FK, int   | Referencia a **Unidad Medida** para definir cómo se cuantifica el insumo.                           |
-| `nombre`            | string    | Nombre del insumo (p. ej., “Aceite Motor”, “Tornillos 1/4”).                                        |
+| `nombre`            | string    | Nombre del insumo (p. ej., “Verdadero”, “Potasio”).                                        |
 | `precio`            | int       | Costo unitario del insumo.                                                                          |
 | `cantidad`          | int       | Stock o cantidad disponible del insumo.                                                             |
 | `fecha_creacion`    | date      | Fecha en que el insumo se da de alta.                                                               |
@@ -69,7 +69,7 @@ Con base en los requerimientos y alcance del proyecto, se decide crear un modelo
 |-----------------|-----------|-----------------------------------------------------------------------------------------------------|
 | `id`            | PK, int   | Identificador único del registro.                                                                   |
 | `actividad_id`  | FK, int   | Referencia a **Actividades** para saber qué tarea se realizó.                                       |
-| `usuario_id`    | FK, int   | Referencia a **Usuarios** para identificar quién realizó la actividad.                              |
+| `usuario_id`    | FK, int   | Referencia a **Usuarios** para identificar el responsable de la actividad.                              |
 | `costo`         | int       | Costo asociado al registro (total o valor específico de mano de obra).                              |
 | `observaciones` | string    | Campo de texto libre para detalles adicionales.                                                     |
 | `fecha`         | date      | Fecha y hora en que se efectuó el registro.                                                        |
