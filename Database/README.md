@@ -8,6 +8,8 @@ _Este documento servirá como guía y registro de todo el proceso de Base de Dat
 
 Con base en los requerimientos y alcance del proyecto, se decide crear un modelo de datos que contempla las entidades **Actividades**, **Usuarios** e **Insumos** como ejes centrales. Adicionalmente, se crean tablas intermedias como **Registros** y **Gasto_Insumos** para gestionar las relaciones complejas y el flujo de información principal del sistema.
 
+<img src="V2.png" alt="Modelo de datos" width="700"/>
+
 ---
 
 ## 2. Descripción de las Entidades (Tablas)
